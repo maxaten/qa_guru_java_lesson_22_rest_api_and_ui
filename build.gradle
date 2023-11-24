@@ -12,8 +12,8 @@ compileTestJava {
     options.encoding = 'UTF-8'
 }
 
-def allureVersion  = '2.24.0',
-        restAssuredVersion = "5.3.2";
+def allureVersion = '2.24.0',
+    restAssuredVersion = "5.3.2";
 
 allure {
     report {
@@ -21,8 +21,8 @@ allure {
     }
     adapter {
         aspectjWeaver.set(true)
-        frameworks{
-            junit5{
+        frameworks {
+            junit5 {
                 adapterVersion.set(allureVersion)
             }
         }
@@ -32,7 +32,7 @@ allure {
 
 dependencies {
 
-    testImplementation (
+    testImplementation(
             "com.codeborne:selenide:6.19.1",
             "org.junit.jupiter:junit-jupiter:5.10.0",
             "io.rest-assured:rest-assured:$restAssuredVersion",
@@ -42,7 +42,7 @@ dependencies {
             "io.qameta.allure:allure-rest-assured:$allureVersion"
     )
 
-    testRuntimeOnly ("org.slf4j:slf4j-simple:2.0.7")
+    testRuntimeOnly("org.slf4j:slf4j-simple:2.0.7")
 }
 
 tasks.withType(JavaCompile) {
@@ -53,7 +53,7 @@ tasks.withType(Test) {
     systemProperties(System.getProperties())
     useJUnitPlatform()
 
-    testLogging  {
+    testLogging {
         lifecycle {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
@@ -61,8 +61,8 @@ tasks.withType(Test) {
     }
 }
 
-task api_test(type: Test){
-    useJUnitPlatform{
+task api_test(type: Test) {
+    useJUnitPlatform {
         includeTags("api")
     }
 }
