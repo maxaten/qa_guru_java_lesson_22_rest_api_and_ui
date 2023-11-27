@@ -11,9 +11,13 @@ public class AuthorizationApi {
         return given()
                 .body(credentials)
                 .contentType(JSON)
+                .log().uri()
+                .log().method()
                 .when()
                 .post("/Account/v1/Login")
                 .then()
+                .log().body()
+                .log().status()
                 .statusCode(200)
                 .extract()
                 .as(LoginResponseModel.class);

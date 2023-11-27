@@ -34,7 +34,7 @@ dependencies {
 
     testImplementation(
             "com.codeborne:selenide:6.19.1",
-            "org.junit.jupiter:junit-jupiter:5.10.0",
+            "org.junit.jupiter:junit-jupiter:5.10.1",
             "io.rest-assured:rest-assured:$restAssuredVersion",
             "io.rest-assured:json-schema-validator:$restAssuredVersion",
             'org.projectlombok:lombok:1.18.30',
