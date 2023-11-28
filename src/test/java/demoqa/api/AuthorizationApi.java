@@ -1,23 +1,21 @@
-package api;
+package demoqa.api;
 
-import models.CredentialsModel;
-import models.LoginResponseModel;
+import demoqa.models.CredentialsModel;
+import demoqa.models.LoginResponseModel;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.http.ContentType.JSON;
+import static spec.LoginUserSpec.loginRequestSpec;
+import static spec.LoginUserSpec.loginResponseSpec;
 
 public class AuthorizationApi {
+
     public static LoginResponseModel login(CredentialsModel credentials) {
-        return given()
+        return given(loginRequestSpec)
                 .body(credentials)
-                .contentType(JSON)
-                .log().uri()
-                .log().method()
                 .when()
                 .post("/Account/v1/Login")
                 .then()
-                .log().body()
-                .log().status()
+                .spec(loginResponseSpec)
                 .statusCode(200)
                 .extract()
                 .as(LoginResponseModel.class);

@@ -1,4 +1,4 @@
-package models;
+package demoqa.models;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
