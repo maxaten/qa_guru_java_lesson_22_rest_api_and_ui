@@ -38,6 +38,7 @@ dependencies {
             "io.rest-assured:rest-assured:$restAssuredVersion",
             "io.rest-assured:json-schema-validator:$restAssuredVersion",
             'org.projectlombok:lombok:1.18.30',
+            'org.aeonbits.owner:owner:1.0.4',
             "io.qameta.allure:allure-selenide:$allureVersion",
             "io.qameta.allure:allure-rest-assured:$allureVersion"
     )

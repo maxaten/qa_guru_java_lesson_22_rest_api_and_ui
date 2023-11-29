@@ -5,6 +5,7 @@ import demoqa.api.BooksApi;
 import demoqa.extentions.WithLogin;
 import demoqa.models.*;
 import demoqa.pages.ProfilePage;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
