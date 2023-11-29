@@ -62,8 +62,8 @@ tasks.withType(Test) {
     }
 }
 
-task api_test(type: Test) {
+task conbined_test(type: Test) {
     useJUnitPlatform {
-        includeTags("demoqa")
+        includeTags("ui")
     }
 }

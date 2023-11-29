@@ -1,4 +1,4 @@
-package spec;
+package demoqa.api.spec;
 
 import demoqa.helpers.CustomAllureListener;
 import io.restassured.builder.ResponseSpecBuilder;
@@ -9,17 +9,23 @@ import io.restassured.specification.ResponseSpecification;
 import static io.restassured.RestAssured.with;
 import static io.restassured.http.ContentType.JSON;
 
-public class LoginUserSpec {
+public class BookUserSpec {
 
-    public static RequestSpecification loginRequestSpec = with()
+    public static RequestSpecification bookRequestSpec = with()
             .filters(CustomAllureListener.withCustomTemplates())
             .log().uri()
             .log().method()
             .contentType(JSON);
 
-    public static ResponseSpecification loginResponseSpec = new ResponseSpecBuilder()
+    public static ResponseSpecification bookAddResponseSpec = new ResponseSpecBuilder()
             .log(LogDetail.STATUS)
             .log(LogDetail.BODY)
-            .expectStatusCode(200)
+            .expectStatusCode(201)
+            .build();
+
+    public static ResponseSpecification bookDeleteResponseSpec = new ResponseSpecBuilder()
+            .log(LogDetail.STATUS)
+            .log(LogDetail.BODY)
+            .expectStatusCode(204)
             .build();
 }

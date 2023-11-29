@@ -5,7 +5,7 @@ import demoqa.models.DeleteBookModel;
 import demoqa.models.LoginResponseModel;
 
 import static io.restassured.RestAssured.given;
-import static spec.BookUserSpec.*;
+import static demoqa.api.spec.BookUserSpec.*;
 
 public class BooksApi {
 

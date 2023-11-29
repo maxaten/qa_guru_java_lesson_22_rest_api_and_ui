@@ -4,8 +4,8 @@ import demoqa.models.LoginRequestModel;
 import demoqa.models.LoginResponseModel;
 
 import static io.restassured.RestAssured.given;
-import static spec.LoginUserSpec.loginRequestSpec;
-import static spec.LoginUserSpec.loginResponseSpec;
+import static demoqa.api.spec.LoginUserSpec.loginRequestSpec;
+import static demoqa.api.spec.LoginUserSpec.loginResponseSpec;
 
 public class AuthorizationApi {
     public LoginResponseModel login(LoginRequestModel loginRequestModel) {
