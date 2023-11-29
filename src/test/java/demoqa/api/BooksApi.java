@@ -9,7 +9,7 @@ import static spec.BookUserSpec.*;
 
 public class BooksApi {
 
-    public static void deleteAllBooks(LoginResponseModel loginResponse) {
+    public void deleteAllBooks(LoginResponseModel loginResponse) {
         given(bookRequestSpec)
                 .header("Authorization", "Bearer " + loginResponse.getToken())
                 .queryParam("UserId", loginResponse.getUserId())
@@ -19,7 +19,7 @@ public class BooksApi {
                 .spec(bookDeleteResponseSpec);
     }
 
-    public static void addBook(LoginResponseModel loginResponse, AddBookModel booksList) {
+    public void addBook(LoginResponseModel loginResponse, AddBookModel booksList) {
         given(bookRequestSpec)
                 .header("Authorization", "Bearer " + loginResponse.getToken())
                 .body(booksList)
@@ -29,7 +29,7 @@ public class BooksApi {
                 .spec(bookAddResponseSpec);
     }
 
-    public static void deleteBook(LoginResponseModel loginResponse, DeleteBookModel deleteBookModel) {
+    public void deleteBook(LoginResponseModel loginResponse, DeleteBookModel deleteBookModel) {
         given(bookRequestSpec)
                 .header("Authorization", "Bearer " + loginResponse.getToken())
                 .body(deleteBookModel)

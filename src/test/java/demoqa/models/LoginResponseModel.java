@@ -1,12 +1,10 @@
 package demoqa.models;
 
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
 public class LoginResponseModel {
-
     private String userId;
     private String username;
     private String password;

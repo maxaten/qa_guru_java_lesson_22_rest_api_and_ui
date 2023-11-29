@@ -6,12 +6,12 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class ProfilePage {
+    SelenideElement userName = $("#userName-value"),
+            link = $("[href='/profile?book=9781449325862']"),
+            booksList = $(".rt-tbody");
+
     public String name = "Batman",
             nameBook = "Git Pocket Guide";
-
-    SelenideElement userName = $("#userName-value"),
-    link = $("[href='/profile?book=9781449325862']"),
-    booksList = $(".rt-tbody");
 
 
     public ProfilePage checkUserName(String value){

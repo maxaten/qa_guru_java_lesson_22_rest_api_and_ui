@@ -1,6 +1,6 @@
 package demoqa.api;
 
-import demoqa.models.CredentialsModel;
+import demoqa.models.LoginRequestModel;
 import demoqa.models.LoginResponseModel;
 
 import static io.restassured.RestAssured.given;
@@ -8,16 +8,14 @@ import static spec.LoginUserSpec.loginRequestSpec;
 import static spec.LoginUserSpec.loginResponseSpec;
 
 public class AuthorizationApi {
-
-    public static LoginResponseModel login(CredentialsModel credentials) {
+    public LoginResponseModel login(LoginRequestModel loginRequestModel) {
         return given(loginRequestSpec)
-                .body(credentials)
+                .body(loginRequestModel)
                 .when()
                 .post("/Account/v1/Login")
                 .then()
                 .spec(loginResponseSpec)
                 .statusCode(200)
-                .extract()
-                .as(LoginResponseModel.class);
+                .extract().as(LoginResponseModel.class);
     }
 }
