@@ -1,0 +1,19 @@
+HELP.md
+build/
+!**/src/main/**
+!**/src/Hover/**
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### Gradle ###
+.gradle
+gradlew
+gradlew.bat
+settings.gradle
+
+### Logs ###
+*.log
